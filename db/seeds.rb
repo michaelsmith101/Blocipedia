@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+20.times do
+    Wiki.create!(
+        title: 'Test Title',
+        body: 'Test Body',
+        private: false
+    ) 
+end
+
+p "#{Wiki.count}"
