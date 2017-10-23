@@ -41,6 +41,8 @@ group :development, :test do
   gem 'byebug'
   # rspec
   gem 'rspec-rails', '~> 3.0'
+  #shoulda
+  gem 'shoulda'
 end
 
 group :development do
