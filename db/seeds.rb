@@ -14,4 +14,4 @@
     ) 
 end
 
-p "#{Wiki.count}"
+p "#{Wiki.count} wikis created"
