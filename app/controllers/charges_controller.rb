@@ -14,10 +14,12 @@ class ChargesController < ApplicationController
        description: "Blocipedia Membership - #{current_user.email}",
        currency: 'usd'
      )
+    
+     current_user.role = 'premium'
    
-     flash[:notice] = "Thanks for all the money, #{current_user.email}! Feel free to pay me again."
+     flash[:notice] = "Thanks for all the money, #{current_user.role}! Feel free to pay me again."
      redirect_to new_charge_path # or wherever
-   
+     
      # Stripe will send back CardErrors, with friendly messages
      # when something goes wrong.
      # This `rescue block` catches and displays those errors.
