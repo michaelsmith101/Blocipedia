@@ -15,9 +15,9 @@ class ChargesController < ApplicationController
        currency: 'usd'
      )
     
-     current_user.role = 'premium'
-   
-     flash[:notice] = "Thanks for all the money, #{current_user.role}! Feel free to pay me again."
+     current_user.role = 1
+     
+     flash[:notice] = "#{current_user.email}, your account has been upgraded to #{current_user.role}!"
      redirect_to new_charge_path # or wherever
      
      # Stripe will send back CardErrors, with friendly messages
