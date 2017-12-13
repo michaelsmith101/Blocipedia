@@ -15,7 +15,7 @@ class ChargesController < ApplicationController
        currency: 'usd'
      )
     
-     current_user.role = 1
+     current_user.premium!
      
      flash[:notice] = "#{current_user.email}, your account has been upgraded to #{current_user.role}!"
      redirect_to new_charge_path # or wherever

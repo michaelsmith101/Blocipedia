@@ -14,4 +14,12 @@
     ) 
 end
 
+5.times do
+    Wiki.create!(
+        title: 'Private Title',
+        body: 'Private Body',
+        private: true
+    ) 
+end
+
 p "#{Wiki.count} wikis created"
