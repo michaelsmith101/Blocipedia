@@ -34,6 +34,8 @@ gem 'stripe'
 # gem 'bcrypt', '~> 3.1.7'
 #use Figaro to handle API keys as environment variables
 gem 'figaro', '1.0'
+#redcarpet, Markdown gem
+gem 'redcarpet'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
