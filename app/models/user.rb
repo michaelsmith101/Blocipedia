@@ -9,5 +9,7 @@ class User < ActiveRecord::Base
    enum role: [:standard, :premium, :admin]
    
    has_many :wikis
+   has_many :wiki_collaborations
+   has_many :shared_wikis, class_name: 'Wiki',source: :wiki, through: :wiki_collaborations
  
 end
