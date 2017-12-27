@@ -1,0 +1,2 @@
+module WikicollaborationsHelper
+end

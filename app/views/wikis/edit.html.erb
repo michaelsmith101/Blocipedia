@@ -32,4 +32,28 @@
       <% end %>
      <% end %>
    </div>
+  
+  <% if current_user.admin? || (@wiki.user == current_user && current_user.premium?) %>
+   <%= form_for [@wiki, @wiki_collaboration] do |f| %>
+       <div class="form-group">
+         <p>Add Collaborator (email address)</p>
+         <%= text_field_tag :email, nil, html: {class: 'form-control'} %>
+         <%= f.submit "Save", class: 'btn btn-success' %>
+       </div>
+       <ul>
+         <p>Remove Collaborators</p>
+         <% @wiki.wiki_collaborations.each do |c| %>
+         <% if c.user_id != nil %>
+          <li>
+             <%= User.find_by(id: c.user_id).email %>
+             <%= link_to "Remove", [@wiki, c], class: 'btn btn-danger', id: "delete", method: :delete, data: {confirm: 'Are you sure you want to delete this collaborator?'} %>
+          </li>
+         <% end %>
+         <% end %>
+        </ul>
+    <% end %>
+   <% end %>
+
+
+     
  </div>

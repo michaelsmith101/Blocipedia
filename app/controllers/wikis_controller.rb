@@ -36,6 +36,7 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
+    @wiki_collaboration = @wiki.wiki_collaborations.build
   end
   
   def update
